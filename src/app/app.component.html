@@ -2,20 +2,20 @@
 <div style="text-align:center">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-	<h1>
-		Clima {{title}}!
+	<h1>Clima {{title}}!</h1>
 
-	</h1>
+	<input type="text" #cityInput (keyup)='0'>
+	<p>{{cityInput}}</p>
+	<button (click)="cityInput.value">Add</button>
+	
+	<h2>{{city}}</h2>
+	<h2>{{country}}</h2>
+	<h2>{{weather}}</h2>
+	<h2>{{description}}</h2>
+	<h2>{{temp}}</h2>
+	<h2>{{lon}}</h2>
+	<h2>{{lat}}</h2>
 
-	<h2>{{temperature}}</h2>
-	<ul>
-		<li *ngFor="let clima of data">
-		  {{ clima['main']['temp'] }}
-		  {{ clima['main']['temp'] }}
-		  {{ clima['main']['temp'] }}
-		  {{ clima['main']['temp'] }}
-		</li>
-	</ul>
 </div>
 
 
