@@ -1,21 +1,22 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-	<h1>Clima {{title}}!</h1>
-
-	<input type="text" #cityInput (keyup)='0'>
-	<p>{{cityInput}}</p>
-	<button (click)="cityInput.value">Add</button>
-	
-	<h2>{{city}}</h2>
-	<h2>{{country}}</h2>
-	<h2>{{weather}}</h2>
-	<h2>{{description}}</h2>
-	<h2>{{temp}}</h2>
-	<h2>{{lon}}</h2>
-	<h2>{{lat}}</h2>
-
+	<div style="text-align:center">
+      <h1>Clima {{title}}!</h1>
+      <div>
+      <app-test>holamundocruel</app-test>
+      </div>
+      <input type="text" value="London,uk" #cityInput (keyup)='0'>
+      <button (click)="onClickMe(cityInput.value)">Add</button>
+        <h2>{{city}}</h2>
+        <h2>{{country}}</h2>
+        <h2>{{weather}}</h2>
+        <h2>{{description}}</h2>
+        <h2>{{temp}}</h2>
+        <h2>{{lon}}</h2>
+        <h2>{{lat}}</h2>
+    </div> 
 </div>
 
 
+ 
