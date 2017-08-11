@@ -4,9 +4,11 @@ import { FormsModule }   from '@angular/forms';
 import { AppComponent } from './app.component';
 import { InputComponent } from './input.component';
 
-
 //HttpClient
 import { HttpClientModule } from '@angular/common/http';
+
+//GoogleMap
+import { AgmCoreModule } from '@agm/core';
 
 enableProdMode();
 
@@ -17,10 +19,11 @@ enableProdMode();
   ],
   imports: [
     BrowserModule,
-
     HttpClientModule,
-
-    FormsModule
+    FormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDlNpbIjHIE32J9LNLC4ab7YhA7ps4Lggs'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

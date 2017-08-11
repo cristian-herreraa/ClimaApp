@@ -14,7 +14,6 @@ import { InputComponent } from './input.component';
   //,styleUrls: ['./app.component.css']
 })
 
-//export class AppComponent implements OnInit{
 export class AppComponent{
   title = 'app';
 };

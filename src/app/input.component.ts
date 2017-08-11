@@ -5,9 +5,9 @@ import { HttpClient } from '@angular/common/http';
   selector: 'app-input'
   //,templateUrl: './app.component.html'
   , template:
-  `	
+  `
   <div class="input">
-  	<input type="text" value="London,uk" #cityInput (keyup)='0'>
+  	<input type="text" value="London,uk" #cityInput (keyup.enter)="onClickMe(cityInput.value)">
       <button (click)="onClickMe(cityInput.value)">Add</button>
         <h2>{{city}}</h2>
         <h2>{{country}}</h2>
@@ -16,8 +16,15 @@ import { HttpClient } from '@angular/common/http';
         <h2>{{temp}}</h2>
         <h2>{{lon}}</h2>
         <h2>{{lat}}</h2>
-  </div>
+
+        <!-- this creates a google map on the page with the given lat/lng from -->
+        <!-- the component as the initial center of the map: -->
+        <agm-map [latitude]="lat" [longitude]="lon">
+          <agm-marker [latitude]="lat" [longitude]="lon"></agm-marker>
+        </agm-map>
+  </div>  
   `
+  ,styleUrls: ['./app.component.css']
 })
 
 export class InputComponent{
@@ -27,8 +34,8 @@ export class InputComponent{
   public weather: string; 
   public description: string; 
   public temp: string;
-  public lon:string;
-  public lat:string;  
+  public lon:number;
+  public lat:number;  
   public url: string;
 
   constructor(private http:HttpClient){
@@ -56,6 +63,6 @@ export class InputComponent{
         console.log('Error ocurred!');
       });
   }
-
-
 };  
+
+
